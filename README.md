@@ -3,8 +3,8 @@ Automate drawing on lolzteam.online
 
 ## Installation
 First you need is :
-- ([Tampermonkey](https://chrome.google.com/webstore/detail/tampermonkey/dhdgffkkebhmkfjojejmpbldmpobfkfo)) for Chrome
-- ([Tampermonkey](https://addons.mozilla.org/ru/firefox/addon/tampermonkey/)) for Firefox
+- [Tampermonkey](https://chrome.google.com/webstore/detail/tampermonkey/dhdgffkkebhmkfjojejmpbldmpobfkfo) for Chrome
+- [Tampermonkey](https://addons.mozilla.org/ru/firefox/addon/tampermonkey/) for Firefox
 
 
 
