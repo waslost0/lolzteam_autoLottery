@@ -20,7 +20,7 @@ Do same with other file 'scroll_opentab.js' point '1)' and '2)'.
 
 After you will see: 
 
-<img src="https://i.imgur.com/qpNaODu.png">
+<img src="https://i.imgur.com/7jwp7nL.png">
 
 Last what you need is open page with ([drawing](https://lolzteam.online/forums/contests/)) and wait.
 
