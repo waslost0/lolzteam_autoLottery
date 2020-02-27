@@ -23,7 +23,7 @@ After you will see:
 
 <img src="https://i.imgur.com/7jwp7nL.png">
 
-Last what you need is open page with ([drawing](https://lolzteam.online/forums/contests/)) and wait.
+Last what you need is open page with [drawing](https://lolzteam.online/forums/contests/) and wait.
 
 
 
