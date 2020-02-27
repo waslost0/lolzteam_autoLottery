@@ -16,7 +16,8 @@ First you need is :
 
 <img src="https://i.imgur.com/qpNaODu.png">
 
-Do same with other file 'scroll_opentab.js' > point '1.' and '2.'.
+Do same with other file 'scroll_opentab.js' 
+> point '1' and '2'
 
 After you will see: 
 
