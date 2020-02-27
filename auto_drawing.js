@@ -2,7 +2,7 @@
 // @name         autoDrawing
 // @namespace    http://tampermonkey.net/
 // @version      0.1
-// @description  a
+// @description  yesblet
 // @author       @waslost
 // @match        https://lolzteam.online/threads/*
 // @grant        window.close
@@ -10,13 +10,13 @@
 
 function waitForElementToDisplay(time, alreadyText, thisHeadText) {
 
-    if (document.querySelector('.button.marginBlock.LztContest--Participate.primary')){
+    if (document.querySelector('.button.marginBlock.LztContest--Participate')){
         var imteToCLick = document.querySelector('.button.marginBlock.LztContest--Participate.primary')
     }
 
-    if (document.querySelector('.Tooltip.PopupTooltip.LikeLink.item.control.like')) {
+    /*if (document.querySelector('.Tooltip.PopupTooltip.LikeLink.item.control.like')) {
         var LikeToCLick = document.querySelector('.Tooltip.PopupTooltip.LikeLink.item.control.like')
-    }
+    }*/
 
     if (document.querySelector('.error.mn-15-0-0')) {
         window.close();
@@ -26,20 +26,19 @@ function waitForElementToDisplay(time, alreadyText, thisHeadText) {
     var headings = document.evaluate("//span[contains(., 'Принять участие в розыгрыше')]", document, null, XPathResult.ANY_TYPE, null );
     var thisHeading = headings.iterateNext();
 
-    if (alreadyText==null && thisHeadText==null && thisHeading==null) {
+    /*if (alreadyText==null && thisHeadText==null && thisHeading==null) {
+        window.close();
         return;
-    }
+    }*/
     if(alreadyText == null && thisHeadText != null) {
             window.close();
             return;
     }
 
+    console.log(thisHeading);
     if(thisHeading != null) {
-        imteToCLick.click();
-        setTimeout(function() {
-           LikeToCLick.click();
-        }, 500);
 
+        imteToCLick.click();
 
         setTimeout(function() {
             window.close();
