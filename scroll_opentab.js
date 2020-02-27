@@ -30,17 +30,15 @@ function openNewPage() {
     for (let i = 0; i < dates.length; i++) {
         var alreadyIn = dates[i].innerHTML;
         if (alreadyIn.search('alreadyParticipate') != -1) {
-            console.log("alreadyParticipate" + i);
             continue;
         } else {
             setTimeout(function(i) {
-                console.log("not Participate");
                 var num = dates[i].attributes.id.nodeValue;
                 var splits = num.split('-');
                 GM_openInTab ('https://lolzteam.online/threads/' + splits[1]);
                 console.log('https://lolzteam.online/threads/' + splits[1]);
 
-            }, 500 * i, i);
+            }, 1000 * i, i);
         }
     }
 }
