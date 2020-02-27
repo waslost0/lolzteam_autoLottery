@@ -17,7 +17,7 @@ First you need is :
 <img src="https://i.imgur.com/qpNaODu.png">
 
 Do same with other file 'scroll_opentab.js' 
-> point '1' and '2'
+> item '1' and '2' look up
 
 After you will see: 
 
