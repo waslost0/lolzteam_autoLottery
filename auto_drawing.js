@@ -2,7 +2,8 @@
 // @name         autoDrawing
 // @namespace    http://tampermonkey.net/
 // @version      0.1
-// @description  yesblet
+// @description  asd
+// @updateURL    https://raw.githubusercontent.com/waslost0/lolzteam_autoLotteryDrawing/master/auto_drawing.js
 // @author       @waslost
 // @match        https://lolzteam.online/threads/*
 // @grant        window.close
