@@ -3,6 +3,7 @@
 // @namespace    http://tampermonkey.net/
 // @version      0.1
 // @description  Just to scroll page down.
+// @updateURL    https://raw.githubusercontent.com/waslost0/lolzteam_autoLotteryDrawing/master/scroll_opentab.js
 // @author       @waslost
 // @match        https://lolzteam.online/forums/contests/
 // @grant        GM_openInTab
