@@ -5,7 +5,7 @@
 // @description  asd
 // @updateURL    https://raw.githubusercontent.com/waslost0/lolzteam_autoLotteryDrawing/master/auto_drawing.js
 // @author       @waslost
-// @match        https://lolzteam.online/threads/*
+// @match        http*://lolzteam.online/threads/*
 // @grant        window.close
 // ==/UserScript==
 
