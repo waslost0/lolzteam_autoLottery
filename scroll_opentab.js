@@ -39,7 +39,7 @@ function openNewPage() {
                 GM_openInTab ('https://lolzteam.online/threads/' + splits[1]);
                 console.log('https://lolzteam.online/threads/' + splits[1]);
 
-            }, 2000 * i, i);
+            }, 1000 * i, i);
         }
     }
 }
