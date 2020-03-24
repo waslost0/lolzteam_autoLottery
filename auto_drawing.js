@@ -1,49 +1,40 @@
 // ==UserScript==
 // @name         autoDrawing
 // @namespace    http://tampermonkey.net/
-// @version      0.1
-// @description  asd
+// @version      0.2
 // @updateURL    https://raw.githubusercontent.com/waslost0/lolzteam_autoLotteryDrawing/master/auto_drawing.js
 // @author       @waslost
 // @match        http*://lolzteam.online/threads/*
 // @grant        window.close
 // ==/UserScript==
 
-function waitForElementToDisplay(time, alreadyText, thisHeadText) {
+function waitForElementToDisplay(time) {
+    var already_participate = document.evaluate( "//span[@class='LztContest--alreadyParticipating button marginBlock alreadyParticipate disabled ']", document, null, XPathResult.ANY_TYPE, null );
+    var already_participate_text = already_participate.iterateNext();
 
-    if (document.querySelector('.button.marginBlock.LztContest--Participate')){
-        var imteToCLick = document.querySelector('.button.marginBlock.LztContest--Participate.primary')
-    }
+   if (already_participate_text != null)
+   {
+       window.close();
+   }
 
-    /*if (document.querySelector('.Tooltip.PopupTooltip.LikeLink.item.control.like')) {
-        var LikeToCLick = document.querySelector('.Tooltip.PopupTooltip.LikeLink.item.control.like')
-    }*/
+    var participate = document.querySelector('.button.marginBlock.LztContest--Participate.primary')
+    var like = document.querySelector('.Tooltip.PopupTooltip.LikeLink.item.control.like')
 
     if (document.querySelector('.error.mn-15-0-0')) {
         window.close();
     }
 
+    var participate_in_award = document.evaluate("//span[contains(., 'Принять участие в розыгрыше')]", document, null, XPathResult.ANY_TYPE, null );
+    var text_participate_in_award = participate_in_award.iterateNext();
 
-    var headings = document.evaluate("//span[contains(., 'Принять участие в розыгрыше')]", document, null, XPathResult.ANY_TYPE, null );
-    var thisHeading = headings.iterateNext();
+    if(text_participate_in_award != null) {
 
-    /*if (alreadyText==null && thisHeadText==null && thisHeading==null) {
-        window.close();
-        return;
-    }*/
-    if(alreadyText == null && thisHeadText != null) {
-            window.close();
-            return;
-    }
-
-    console.log(thisHeading);
-    if(thisHeading != null) {
-
-        imteToCLick.click();
+        like.click();
+        participate.click();
 
         setTimeout(function() {
             window.close();
-        }, 1000);
+        }, 2500);
 
     }
     else {
@@ -54,10 +45,5 @@ function waitForElementToDisplay(time, alreadyText, thisHeadText) {
 }
 
 (function() {
-    var alreadyIn = document.evaluate( "//span[@class='LztContest--alreadyParticipating button marginBlock alreadyParticipate disabled hidden']", document, null, XPathResult.ANY_TYPE, null );
-    var alreadyText = alreadyIn.iterateNext();
-
-    var headIn = document.evaluate("//span[contains(., 'Вы участвуете в конкурсе')]", document, null, XPathResult.ANY_TYPE, null );
-    var thisHeadText = headIn.iterateNext();
-    waitForElementToDisplay(1000, alreadyText, thisHeadText);
+    waitForElementToDisplay(1000);
 })();
