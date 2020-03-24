@@ -1,7 +1,8 @@
 // ==UserScript==
 // @name         autoDrawing
 // @namespace    http://tampermonkey.net/
-// @version      0.2
+// @version      0.1
+// @description  asd
 // @updateURL    https://raw.githubusercontent.com/waslost0/lolzteam_autoLotteryDrawing/master/auto_drawing.js
 // @author       @waslost
 // @match        http*://lolzteam.online/threads/*
@@ -18,7 +19,7 @@ function waitForElementToDisplay(time) {
    }
 
     var participate = document.querySelector('.button.marginBlock.LztContest--Participate.primary')
-    var like = document.querySelector('.Tooltip.PopupTooltip.LikeLink.item.control.like')
+    var like = document.querySelector('.LikeLink.item.control.like')
 
     if (document.querySelector('.error.mn-15-0-0')) {
         window.close();
