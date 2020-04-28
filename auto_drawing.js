@@ -5,7 +5,7 @@
 // @description  asd
 // @updateURL    https://raw.githubusercontent.com/waslost0/lolzteam_autoLotteryDrawing/master/auto_drawing.js
 // @author       @waslost
-// @match        http*://lolzteam.online/threads/*
+// @match        http*://lzt.guru/threads/*
 // @grant        window.close
 // ==/UserScript==
 
@@ -29,13 +29,12 @@ function waitForElementToDisplay(time) {
     var text_participate_in_award = participate_in_award.iterateNext();
 
     if(text_participate_in_award != null) {
-
         like.click();
         participate.click();
 
         setTimeout(function() {
             window.close();
-        }, 2500);
+        }, 3500);
 
     }
     else {
