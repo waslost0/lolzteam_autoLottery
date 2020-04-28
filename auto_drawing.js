@@ -15,11 +15,11 @@ function waitForElementToDisplay(time) {
 
    if (already_participate_text != null)
    {
-       window.close();
+      window.close();
    }
 
     var participate = document.querySelector('.button.marginBlock.LztContest--Participate.primary')
-    var like = document.querySelector('.LikeLink.item.control.like')
+    var like = document.querySelector('.icon.likeCounterIcon')
 
     if (document.querySelector('.error.mn-15-0-0')) {
         window.close();
