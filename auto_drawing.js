@@ -34,7 +34,7 @@ function waitForElementToDisplay(time) {
 
         setTimeout(function() {
             window.close();
-        }, 3500);
+        }, 1000);
 
     }
     else {
