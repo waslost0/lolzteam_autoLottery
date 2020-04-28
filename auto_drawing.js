@@ -30,7 +30,7 @@ function waitForElementToDisplay(time) {
     var text_participate_in_award = participate_in_award.iterateNext();
 
     if(text_participate_in_award != null) {
-        like.click();
+        //like.click();
         participate.click();
 
         setTimeout(function() {
