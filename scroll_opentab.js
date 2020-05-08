@@ -6,7 +6,7 @@
 // @downloadURL  https://raw.githubusercontent.com/waslost0/lolzteam_autoLotteryDrawing/master/scroll_opentab.js
 // @updateURL    https://raw.githubusercontent.com/waslost0/lolzteam_autoLotteryDrawing/master/scroll_opentab.js
 // @author       @waslost
-// @match        https://lzt.guru/forums/contests/
+// @match        https://lolz.guru/forums/contests/
 // @grant        GM_openInTab
 // ==/UserScript==
 
