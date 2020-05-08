@@ -32,6 +32,7 @@ function waitForElementToDisplay(time) {
     if(text_participate_in_award != null) {
         //like.click();
         participate.click();
+        console.log("Partspt");
 
         setTimeout(function() {
             window.close();
