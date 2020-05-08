@@ -28,7 +28,7 @@ function scrollpage() {
 
 function openNewPage() {
     var dates = document.querySelectorAll('[id^="thread"]');
-    for (let i = 0; i < dates.length; i++) {
+    for (var i = 0; i < dates.length; i++) {
         var alreadyIn = dates[i].innerHTML;
         if (alreadyIn.search('alreadyParticipate') == -1) {
             setTimeout(function(i) {
