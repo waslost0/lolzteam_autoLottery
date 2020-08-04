@@ -1,63 +1,51 @@
 // ==UserScript==
 // @name         autoDrawing
 // @namespace    http://tampermonkey.net/
-// @version      0.1
-// @description  a
+// @version      0.1.1
+// @description  asd
+// @updateURL    https://raw.githubusercontent.com/waslost0/lolzteam_autoLotteryDrawing/master/auto_drawing.js
+// @downloadURL  https://raw.githubusercontent.com/waslost0/lolzteam_autoLotteryDrawing/master/auto_drawing.js
 // @author       @waslost
-// @match        https://lolzteam.online/threads/*
+// @match        https://lolz.guru/threads/*
 // @grant        window.close
 // ==/UserScript==
 
-function waitForElementToDisplay(time, alreadyText, thisHeadText) {
+function waitForElementToDisplay(time) {
+    var already_participate = document.evaluate( "//span[@class='LztContest--alreadyParticipating button marginBlock alreadyParticipate disabled ']", document, null, XPathResult.ANY_TYPE, null );
+    var already_participate_text = already_participate.iterateNext();
 
-    if (document.querySelector('.button.marginBlock.LztContest--Participate.primary')){
-        var imteToCLick = document.querySelector('.button.marginBlock.LztContest--Participate.primary')
-    }
+   if (already_participate_text != null) { window.close();}
 
-    if (document.querySelector('.Tooltip.PopupTooltip.LikeLink.item.control.like')) {
-        var LikeToCLick = document.querySelector('.Tooltip.PopupTooltip.LikeLink.item.control.like')
-    }
+    var participate = document.querySelector('.button.marginBlock.LztContest--Participate');
+    var like = document.querySelector('.icon.likeCounterIcon');
 
     if (document.querySelector('.error.mn-15-0-0')) {
         window.close();
     }
 
-
-    var headings = document.evaluate("//span[contains(., 'Принять участие в розыгрыше')]", document, null, XPathResult.ANY_TYPE, null );
-    var thisHeading = headings.iterateNext();
-
-    if (alreadyText==null && thisHeadText==null && thisHeading==null) {
-        return;
+    try {
+        var is_captcha_sloved = document.evaluate( "//div[@class='antigate_solver image solved']", document, null, XPathResult.ANY_TYPE, null );
+        var is_captcha_sloved_text = is_captcha_sloved.iterateNext();
+        console.log(is_captcha_sloved_text)
     }
-    if(alreadyText == null && thisHeadText != null) {
-            window.close();
-            return;
+    catch (e) {}
+
+    try {
+        if(is_captcha_sloved_text.innerText == "Solved") {
+            like.click();
+            participate.click();
+            setTimeout(function() {
+                window.close();
+            }, 1000);
+        }
     }
+    catch (e) {}
 
-    if(thisHeading != null) {
-        imteToCLick.click();
-        setTimeout(function() {
-           LikeToCLick.click();
-        }, 500);
-
-
-        setTimeout(function() {
-            window.close();
-        }, 1000);
-
-    }
-    else {
-        setTimeout(function() {
+   setTimeout(function() {
             waitForElementToDisplay(time);
-        }, time);
-    }
+   }, time);
 }
 
 (function() {
-    var alreadyIn = document.evaluate( "//span[@class='LztContest--alreadyParticipating button marginBlock alreadyParticipate disabled hidden']", document, null, XPathResult.ANY_TYPE, null );
-    var alreadyText = alreadyIn.iterateNext();
-
-    var headIn = document.evaluate("//span[contains(., 'Вы участвуете в конкурсе')]", document, null, XPathResult.ANY_TYPE, null );
-    var thisHeadText = headIn.iterateNext();
-    waitForElementToDisplay(1000, alreadyText, thisHeadText);
+    waitForElementToDisplay(1000);
 })();

@@ -3,12 +3,14 @@
 // @namespace    http://tampermonkey.net/
 // @version      0.1
 // @description  Just to scroll page down.
+// @downloadURL  https://raw.githubusercontent.com/waslost0/lolzteam_autoLotteryDrawing/master/scroll_opentab.js
+// @updateURL    https://raw.githubusercontent.com/waslost0/lolzteam_autoLotteryDrawing/master/scroll_opentab.js
 // @author       @waslost
-// @match        https://lolzteam.online/forums/contests/
+// @match        https://lolz.guru/forums/contests/
 // @grant        GM_openInTab
 // ==/UserScript==
 
-function scrollpage() {
+/*function scrollpage() {
     var Height=document.documentElement.scrollHeight;
     var i=1;
     function f(){
@@ -17,32 +19,27 @@ function scrollpage() {
         i=i+200;
         if(i>=Height)
         {
-            console.log('OPENNEWPAGE')
             openNewPage();
             return;
         }
-        setTimeout( f,500);
+        setTimeout( f,250);
     }f();
-}
+}*/
 
 function openNewPage() {
     var dates = document.querySelectorAll('[id^="thread"]');
-    for (let i = 0; i < dates.length; i++) {
+    for (var i = 0; i < dates.length; i++) {
         var alreadyIn = dates[i].innerHTML;
-        if (alreadyIn.search('alreadyParticipate') != -1) {
-            console.log("alreadyParticipate" + i);
-            continue;
-        } else {
+        if (alreadyIn.search('alreadyParticipate') == -1 && alreadyIn.search('fa fa-bullseye mainc Tooltip') == -1) {
             setTimeout(function(i) {
-                console.log("not Participate");
                 var num = dates[i].attributes.id.nodeValue;
                 var splits = num.split('-');
-                GM_openInTab ('https://lolzteam.online/threads/' + splits[1]);
-                console.log('https://lolzteam.online/threads/' + splits[1]);
+                GM_openInTab ('https://lolz.guru/threads/' + splits[1]);
 
-            }, 500 * i, i);
+                console.log('https://lolz.guru/threads/' + splits[1]);
+            }, 15000*i, i);
         }
     }
 }
 
-scrollpage();
+openNewPage();
