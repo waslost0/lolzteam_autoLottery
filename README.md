@@ -1,5 +1,5 @@
 # lolzteam_autoLotteryDrawing
-Automate drawing on lolzteam.online
+Automate drawing on lolz.guru
 
 ## Installation
 First you need is :
@@ -23,7 +23,7 @@ After you will see:
 
 <img src="https://i.imgur.com/7jwp7nL.png">
 
-Last that you need is open page with [drawing](https://lolzteam.online/forums/contests/) press F5 and wait.
+Last that you need is open page with [drawing](https://lolz.guru/forums/contests/) press F5 and wait.
 
 
 
