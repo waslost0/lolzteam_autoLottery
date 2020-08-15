@@ -31,13 +31,11 @@ function openNewPage() {
     for (var i = 0; i < dates.length; i++) {
         var alreadyIn = dates[i].innerHTML;
         if (alreadyIn.search('alreadyParticipate') == -1 && alreadyIn.search('fa fa-bullseye mainc Tooltip') == -1) {
-            setTimeout(function(i) {
+            setTimeout(function (i) {
                 var num = dates[i].attributes.id.nodeValue;
                 var splits = num.split('-');
-                GM_openInTab ('https://lolz.guru/threads/' + splits[1]);
-
-                console.log('https://lolz.guru/threads/' + splits[1]);
-            }, 15000*i, i);
+                GM_openInTab('https://lolz.guru/threads/' + splits[1]);
+            }, 15000 * i, i);
         }
     }
 }
