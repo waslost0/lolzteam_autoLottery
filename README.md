@@ -1,7 +1,6 @@
 # ~~lolzteam_autoLotteryDrawing~~
 New Version https://github.com/waslost0/lolzguru_contests_automate
 
-Automate drawing on lolz.guru
 
 ## Installation
 First you need is :
