@@ -10,11 +10,21 @@
 // @grant        window.close
 // ==/UserScript==
 
-function waitForElementToDisplay(time) {
-    var already_participate = document.evaluate("//span[@class='LztContest--alreadyParticipating button marginBlock alreadyParticipate disabled ']", document, null, XPathResult.ANY_TYPE, null);
-    var already_participate_text = already_participate.iterateNext();
+function getRndInteger(min, max) {
+  return Math.floor(Math.random() * (max - min) ) + min;
+}
 
-    if (already_participate_text != null) {
+function delay(time) {
+    return new Promise(resolve => setTimeout(resolve, time));
+}
+
+async function waitForElementToDisplay(time) {
+    var timeout = [20, 40];
+    var already_participate = document.querySelector('.LztContest--alreadyParticipating.button.marginBlock.alreadyParticipate.disabled.hidden');
+    var participate_button = document.querySelector('.LztContest--Participate.button');
+    var like = document.querySelector('.icon.likeCounterIcon');
+
+    if (already_participate == null || participate_button == null) {
         window.close();
     }
 
@@ -22,26 +32,19 @@ function waitForElementToDisplay(time) {
         window.close();
     }
 
-    var participate = document.querySelector('.button.marginBlock.LztContest--Participate');
-    var like = document.querySelector('.icon.likeCounterIcon');
 
     if (document.querySelector('.error.mn-15-0-0')) {
         window.close();
     }
 
     try {
-        var is_captcha_sloved = document.evaluate("//div[@class='antigate_solver image solved']", document, null, XPathResult.ANY_TYPE, null);
-        var is_captcha_sloved_text = is_captcha_sloved.iterateNext();
-    } catch (e) {}
-
-    try {
-        if (is_captcha_sloved_text.innerText == "Solved") {
-            like.click();
-            participate.click();
-            setTimeout(function () {
-                window.close();
-            }, 1000);
-        }
+        await delay(getRndInteger(timeout[0], timeout[1]) * 1000);
+        participate_button.click();
+        console.log('participate click');
+        await delay(4000);
+        console.log('like click');
+        like.click();
+        await delay(3000);
     } catch (e) {}
 
     setTimeout(function () {
