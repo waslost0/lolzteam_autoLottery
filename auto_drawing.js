@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         autoDrawing
 // @namespace    http://tampermonkey.net/
-// @version      0.1.1
+// @version      0.1.2
 // @description  asd
 // @updateURL    https://raw.githubusercontent.com/waslost0/lolzteam_autoLotteryDrawing/master/auto_drawing.js
 // @downloadURL  https://raw.githubusercontent.com/waslost0/lolzteam_autoLotteryDrawing/master/auto_drawing.js
@@ -11,7 +11,7 @@
 // ==/UserScript==
 
 function getRndInteger(min, max) {
-  return Math.floor(Math.random() * (max - min) ) + min;
+    return Math.floor(Math.random() * (max - min) ) + min;
 }
 
 function delay(time) {
@@ -19,7 +19,9 @@ function delay(time) {
 }
 
 async function waitForElementToDisplay(time) {
-    var timeout = [20, 40];
+    var timeout = [20, 60];
+    var contests = document.querySelector('a[href="https://lolz.guru/forums/contests/"]');
+    if (contests == null) return;
     var already_participate = document.querySelector('.LztContest--alreadyParticipating.button.marginBlock.alreadyParticipate.disabled.hidden');
     var participate_button = document.querySelector('.LztContest--Participate.button');
     var like = document.querySelector('.icon.likeCounterIcon');
@@ -44,7 +46,7 @@ async function waitForElementToDisplay(time) {
         await delay(4000);
         console.log('like click');
         like.click();
-        await delay(3000);
+        await delay(2000);
     } catch (e) {}
 
     setTimeout(function () {
@@ -52,6 +54,4 @@ async function waitForElementToDisplay(time) {
     }, time);
 }
 
-(function () {
-    waitForElementToDisplay(1000);
-})();
+waitForElementToDisplay(1000);
