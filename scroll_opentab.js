@@ -1,7 +1,8 @@
+
 // ==UserScript==
 // @name         scroll
 // @namespace    http://tampermonkey.net/
-// @version      0.1
+// @version      0.2
 // @description  Just to scroll page down.
 // @downloadURL  https://raw.githubusercontent.com/waslost0/lolzteam_autoLotteryDrawing/master/scroll_opentab.js
 // @updateURL    https://raw.githubusercontent.com/waslost0/lolzteam_autoLotteryDrawing/master/scroll_opentab.js
@@ -29,15 +30,20 @@
 function openNewPage() {
     var dates = document.querySelectorAll('[id^="thread"]');
     for (var i = 0; i < dates.length; i++) {
+
         var alreadyIn = dates[i].innerHTML;
+        console.log(alreadyIn.search('fa fa-bullseye mainc Tooltip') == -1);
+        console.log(alreadyIn.search('alreadyParticipate') == -1);
+
         if (alreadyIn.search('alreadyParticipate') == -1 && alreadyIn.search('fa fa-bullseye mainc Tooltip') == -1) {
             setTimeout(function (i) {
                 var num = dates[i].attributes.id.nodeValue;
                 var splits = num.split('-');
                 GM_openInTab('https://lolz.guru/threads/' + splits[1]);
-            }, 15000 * i, i);
+            }, 10000 * i, i);
         }
     }
 }
 
 openNewPage();
+setTimeout(function(){ location.reload(); }, 100*1000);
