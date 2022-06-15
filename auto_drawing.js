@@ -1,11 +1,10 @@
 // ==UserScript==
 // @name         autoDrawing
 // @namespace    http://tampermonkey.net/
-// @version      0.1.2
+// @version      0.1.3
 // @description  asd
 // @updateURL    https://raw.githubusercontent.com/waslost0/lolzteam_autoLotteryDrawing/master/auto_drawing.js
 // @downloadURL  https://raw.githubusercontent.com/waslost0/lolzteam_autoLotteryDrawing/master/auto_drawing.js
-// @author       @waslost
 // @match        https://lolz.guru/threads/*
 // @grant        window.close
 // ==/UserScript==
@@ -22,11 +21,12 @@ async function waitForElementToDisplay(time) {
     var timeout = [20, 60];
     var contests = document.querySelector('a[href="https://lolz.guru/forums/contests/"]');
     if (contests == null) return;
-    var already_participate = document.querySelector('.LztContest--alreadyParticipating.button.marginBlock.alreadyParticipate.disabled.hidden');
+    var already_participate = document.querySelector('span[class="LztContest--alreadyParticipating button marginBlock alreadyParticipate"]');
+    if (already_participate != null) window.close();
     var participate_button = document.querySelector('.LztContest--Participate.button');
     var like = document.querySelector('.icon.likeCounterIcon');
 
-    if (already_participate == null || participate_button == null) {
+    if (participate_button == null) {
         window.close();
     }
 
