@@ -7,7 +7,7 @@
 // @downloadURL  https://raw.githubusercontent.com/waslost0/lolzteam_autoLotteryDrawing/master/scroll_opentab.js
 // @updateURL    https://raw.githubusercontent.com/waslost0/lolzteam_autoLotteryDrawing/master/scroll_opentab.js
 // @author       @waslost
-// @match        https://lolz.guru/forums/contests/
+// @match        https://zelenka.guru/forums/contests/
 // @grant        GM_openInTab
 // ==/UserScript==
 
@@ -39,7 +39,7 @@ function openNewPage() {
             setTimeout(function (i) {
                 var num = dates[i].attributes.id.nodeValue;
                 var splits = num.split('-');
-                GM_openInTab('https://lolz.guru/threads/' + splits[1]);
+                GM_openInTab('https://zelenka.guru/threads/' + splits[1]);
             }, 10000 * i, i);
         }
     }
