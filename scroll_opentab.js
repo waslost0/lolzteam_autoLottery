@@ -2,12 +2,12 @@
 // ==UserScript==
 // @name         scroll
 // @namespace    http://tampermonkey.net/
-// @version      0.2
+// @version      0.2.1
 // @description  Just to scroll page down.
 // @downloadURL  https://raw.githubusercontent.com/waslost0/lolzteam_autoLotteryDrawing/master/scroll_opentab.js
 // @updateURL    https://raw.githubusercontent.com/waslost0/lolzteam_autoLotteryDrawing/master/scroll_opentab.js
 // @author       @waslost
-// @match        https://zelenka.guru/forums/contests/
+// @match        https://lolz.guru/forums/contests/
 // @grant        GM_openInTab
 // ==/UserScript==
 
