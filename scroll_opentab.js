@@ -39,7 +39,7 @@ function openNewPage() {
             setTimeout(function (i) {
                 var num = dates[i].attributes.id.nodeValue;
                 var splits = num.split('-');
-                GM_openInTab('https://zelenka.guru/threads/' + splits[1]);
+                GM_openInTab('https://lolz.guru/threads/' + splits[1]);
             }, 10000 * i, i);
         }
     }
