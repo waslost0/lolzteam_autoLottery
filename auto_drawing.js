@@ -1,11 +1,11 @@
 // ==UserScript==
 // @name         autoDrawing
 // @namespace    http://tampermonkey.net/
-// @version      0.1.3
+// @version      0.2.1
 // @description  asd
 // @updateURL    https://raw.githubusercontent.com/waslost0/lolzteam_autoLotteryDrawing/master/auto_drawing.js
 // @downloadURL  https://raw.githubusercontent.com/waslost0/lolzteam_autoLotteryDrawing/master/auto_drawing.js
-// @match        https://zelenka.guru/threads/*
+// @match        https://lol.guru/threads/*
 // @grant        window.close
 // ==/UserScript==
 
