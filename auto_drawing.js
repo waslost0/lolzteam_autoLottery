@@ -19,7 +19,7 @@ function delay(time) {
 
 async function waitForElementToDisplay(time) {
     var timeout = [20, 60];
-    var contests = document.querySelector('a[href="https://zelenka.guru/forums/contests/"]');
+    var contests = document.querySelector('a[href="https://lolz.guru/forums/contests/"]');
     if (contests == null) return;
     var already_participate = document.querySelector('span[class="LztContest--alreadyParticipating button marginBlock alreadyParticipate"]');
     if (already_participate != null) window.close();
